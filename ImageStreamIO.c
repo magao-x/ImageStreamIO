@@ -496,7 +496,7 @@ errno_t ImageStreamIO_createIm_gpu(IMAGE *image, const char *name, long naxis,
         }
 
         int SM_fd;  // shared memory file descriptor
-        SM_fd = open(SM_fname, O_RDWR | O_CREAT | O_TRUNC, (mode_t)0600);
+        SM_fd = open(SM_fname, O_RDWR | O_CREAT | O_TRUNC, (mode_t)0644);
         if (SM_fd == -1) {
             ImageStreamIO_printERROR(IMAGESTREAMIO_FILEOPEN,
               "Error opening file for writing");
